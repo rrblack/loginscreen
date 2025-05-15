@@ -53,14 +53,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
     def get_short_name(self):
         return self.email
-
-
-
-class UserAccount(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name + ' ' + self.email
-

@@ -1,5 +1,4 @@
-from django.urls import path, include
-from . import views
+from .views import login_view
 from django.contrib.auth.views import LoginView
 from django.urls import path, include
 from . import views
@@ -7,7 +6,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('', views.root_redirect),
+    path('login/', views.login_view, name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('top_page/', views.top_page, name='top_page'),
     path('sign_up/', views.sign_up, name='sign_up'),

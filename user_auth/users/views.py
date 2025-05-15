@@ -29,10 +29,11 @@ def login_view(request):
             return redirect("top_page")
         else:
             messages.error(request, "Invalid email")
-            return redirect(request,"login.html")
-    return render(request, "login.html")
+            return render(request,"registration/login.html")
+    return render(request, "registration/login.html")
 
-
+def root_redirect(request):
+    return redirect('login')
 
 def sign_up(request):
     if request.method == "POST":

@@ -3,7 +3,7 @@
     <h2 class="fw-bold mb-2 text-uppercase">ログイン</h2>
     <p class="text-white-50 mb-5">メールアドレスとパスワードを入力してください</p>
 
-    <form method="POST" action={% url 'top_page' %}>
+    <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
     <div data-mdb-input-init class="form-outline form-white mb-4">
         <label class="form-label" for="typeEmailX">メールアドレス</label>
