@@ -3,7 +3,7 @@
     <h2 class="fw-bold mb-2 text-uppercase">ログイン</h2>
     <p class="text-white-50 mb-5">メールアドレスとパスワードを入力してください</p>
 
-    <form method="POST" action="{% url 'login' %}">
+<form method="POST" action="{% url 'user_login' %}">
     {% csrf_token %}
     <div data-mdb-input-init class="form-outline form-white mb-4">
         <label class="form-label" for="typeEmailX">メールアドレス</label>
@@ -12,17 +12,18 @@
 
     <div data-mdb-input-init class="form-outline form-white mb-4">
         <label class="form-label" for="typePasswordX">パスワード</label>
-        <input type="password" id="typePasswordX" name= "password" class="form-control form-control-lg" />
+        <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" />
+    </div>
+    <div>
+         <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">ログイン</button>
+    </div>
+</form>
+
     </div>
 
-
+<div>
     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="forgotPasswordModal">パスワードを忘れた？</a></p>
-
-    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">ログイン</button>
-
-    </div>
-        </form>
-
+</div>
     <div>
         <p class="mb-0">アカウントを持ってない方 <a href="{% url 'sign_up' %}" class="text-white-50 fw-bold">会員登録</a>　</p>
     </div>
