@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+     {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-danger">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+    <form method="POST" action="{% url 'mail_verification' %}">
     <p style = "font-size: 35px;"> メールにて送られた認証コードをご入力ください </p>
     <div data-mdb-input-init class="form-outline form-white mb-4">
         <input type="number" id="typeEmailCheckX" name= "code" minlength="6" maxlength="6" pattern="\d{6}" class="form-control form-control-lg" required placeholder="コード"/>
 
     </div>
-    <form method="POST" action="{% url 'top_page' %}">
     {% csrf_token %}
 
 

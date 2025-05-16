@@ -4,7 +4,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from .code_generator import CodeGenerator
+import random
 from .forms import CustomUserCreationForm
 
 @login_required
@@ -16,9 +17,19 @@ User = get_user_model()
 
 
 def mail_verification(request):
+    generator = CodeGenerator()
+    generated_code = generator.create_code()
+    print(generated_code)
     if request.method == "GET":
         return render(request, "registration/mail_check.html")
-    return redirect('sign_up')
+    if request.method == "POST":
+        code = request.POST.get("code")
+        if code == "111111":
+            authenticate(users_login(request))
+            print("code is right")
+            return redirect('top_page')
+        else: messages.error(request, "Invalid code")
+    return redirect('mail_verification')
 
 def mail_check(request):
     if request.method == "POST":
