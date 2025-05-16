@@ -39,7 +39,7 @@ def users_login(request):
 
             return redirect("top_page")
         else:
-            return render(request, "registration/sign_up.html")
+            messages.error(request, "Email or Password Incorrect")
     return render(request, "registration/login.html")
 
 
@@ -58,3 +58,16 @@ def sign_up(request):
     else:
         form = CustomUserCreationForm()
     return render(request, "registration/sign_up.html", {"form": form})
+
+def password_reset_form(request):
+    return render(request,"registration/password_reset_form.html")
+
+def password_reset(request):
+    if request.method == "POST":
+        print(request)
+        email = request.POST.get("email")
+        user = authenticate(request, email=email)
+        if user is not None:
+            redirect(reverse("password_reset"))
+        else:
+            redirect(reverse("sign_up"))
