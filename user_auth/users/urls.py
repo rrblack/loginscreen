@@ -13,5 +13,6 @@ urlpatterns = [
     path('mail_check/' , views.mail_check, name='mail_check'),
     path('password_reset_form/', views.password_reset_form, name='password_reset_form'),
     path('password_reset/', views.password_reset, name='password_reset'),
+    path('mail_verification/', views.mail_verification, name='mail_verification'),
 
     ]

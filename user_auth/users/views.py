@@ -9,9 +9,16 @@ from .forms import CustomUserCreationForm
 
 @login_required
 def login_success(request):
+    messages.success(request, "You are now logged in")
     return render(request,"users/top_page.html")
 
 User = get_user_model()
+
+
+def mail_verification(request):
+    if request.method == "GET":
+        return render(request, "registration/mail_check.html")
+    return redirect('sign_up')
 
 def mail_check(request):
     if request.method == "POST":
@@ -20,10 +27,16 @@ def mail_check(request):
         password = request.POST.get("password")
 
         if name and email and password:
-            user = User.objects.create_user(name=name, email=email,password = password)
-            print(user.__dict__)
-            print(user.save())
-            return redirect('login')
+            try:
+                user = User.objects.create_user(name=name, email=email,password = password)
+                print(user.__dict__)
+                return redirect(reverse("mail_verification"))
+            except Exception as e:
+                print("Error creating user", e)
+                messages.error(request, "Account already exists")
+        else:
+            messages.error(request, "All fields required")
+    return redirect('sign_up')
 
 
 def users_login(request):
@@ -36,7 +49,6 @@ def users_login(request):
 
         if user is not None:
             login(request, user)
-
             return redirect("top_page")
         else:
             messages.error(request, "Email or Password Incorrect")
@@ -47,17 +59,7 @@ def root_redirect(request):
     return redirect('login')
 
 def sign_up(request):
-    if request.method == "POST":
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse("mail_check"))
-        else:
-            print(form.errors)
-
-    else:
-        form = CustomUserCreationForm()
-    return render(request, "registration/sign_up.html", {"form": form})
+    return render(request, "registration/sign_up.html")
 
 def password_reset_form(request):
     return render(request,"registration/password_reset_form.html")

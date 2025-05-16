@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+   {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
     Hello, {{ user.name|default:"Guest" }}!
     <hr />
     {% if user.is_authenticated %}

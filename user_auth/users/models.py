@@ -1,3 +1,5 @@
+from sqlite3 import IntegrityError
+
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import UserManager, PermissionsMixin
@@ -12,8 +14,12 @@ class MyUserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(name=name, email=email)
         user.set_password(password)
-        user.save()
-        return user
+        try:
+            user.save()
+            return user
+        except Exception as e:
+            print("Error creating user", e)
+            raise
 
     def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault('is_staff', True)
