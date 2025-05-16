@@ -77,12 +77,19 @@ def password_reset_form(request):
 def password_reset(request):
     if request.method == "POST":
         email = request.POST.get("email")
-        user = authenticate(request, email=email)
-        if user is not None:
-            messages.success(request, "Password reset link has been sent to your email")
-            return render(request, "registration/sign_up.html")
+        try:
+            user = User.objects.get(email=email)
+            print(user)
+            if user is not None:
+                messages.success(request, "Password reset link has been sent to your email")
+                return render(request, "registration/password_reset_form.html")
+
+        except Exception as e:
+            print(e)
+            messages.error(request, "User does not exist")
+
         else:
             messages.error(request, "Email invalid")
             return render(request, "registration/password_reset_form.html")
 
-    return redirect(login)
+    return (redirect('login'))

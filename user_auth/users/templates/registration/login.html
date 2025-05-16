@@ -2,7 +2,13 @@
 {% block content %}
   {% if messages %}
   {% for message in messages %}
-    <div class="alert alert-danger">
+    <div class="alert
+        {% if message.tags == 'success' %}
+            alert-success
+        {% elif message.tags == 'error' %}
+            alert-danger
+        {% endif %}
+     "style="position: relative; top: -40px;">
       {{ message }}
     </div>
   {% endfor %}
