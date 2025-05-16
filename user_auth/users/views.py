@@ -25,7 +25,6 @@ def mail_verification(request):
     if request.method == "POST":
         code = request.POST.get("code")
         if code == "111111":
-            authenticate(users_login(request))
             print("code is right")
             return redirect('top_page')
         else: messages.error(request, "Invalid code")
@@ -77,10 +76,13 @@ def password_reset_form(request):
 
 def password_reset(request):
     if request.method == "POST":
-        print(request)
         email = request.POST.get("email")
         user = authenticate(request, email=email)
         if user is not None:
-            redirect(reverse("password_reset"))
+            messages.success(request, "Password reset link has been sent to your email")
+            return render(request, "registration/sign_up.html")
         else:
-            redirect(reverse("sign_up"))
+            messages.error(request, "Email invalid")
+            return render(request, "registration/login.html")
+
+    return redirect(login)
