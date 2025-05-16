@@ -4,8 +4,8 @@
     <h2 class="fw-bold mb-2 text-uppercase">登録</h2>
     <p class="text-white-50 mb-10">メールアドレスとパスワードを入力してください</p>
 
-   <form method="POST" action="{% url 'mail_check' %}">
-    {% csrf_token %}
+ <form   method="POST" action="{% url 'mail_check' %}">
+       {% csrf_token %}
 
     <div data-mdb-input-init class="form-outline form-white mb-4">
         <label class="form-label" for="typeEmailX">お名前</label>
@@ -24,7 +24,8 @@
         <label class="form-label" for="typePasswordX">パスワード</label>
         <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" required />
     </div>
+
     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">登録</button>
-    </form>
+</form>
 
 {% endblock content %}

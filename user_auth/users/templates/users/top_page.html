@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    Hello, {{ user.username|default:"Guest" }}!
+    Hello, {{ user.name|default:"Guest" }}!
     <hr />
     {% if user.is_authenticated %}
         {% include "registration/_logout.html" %}
