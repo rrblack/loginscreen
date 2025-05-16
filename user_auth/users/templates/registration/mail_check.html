@@ -8,6 +8,13 @@
     </div>
   {% endfor %}
 {% endif %}
+
+<a href="{% url 'sign_up' %}">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="position: relative; left: -160px; top: -30px;">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+</svg>
+</a>
+
     <form method="POST" action="{% url 'mail_verification' %}">
     <p style = "font-size: 35px;"> メールにて送られた認証コードをご入力ください </p>
     <div data-mdb-input-init class="form-outline form-white mb-4">
@@ -15,8 +22,6 @@
 
     </div>
     {% csrf_token %}
-
-
         <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">送信 </button>
 
        </form>

@@ -83,6 +83,6 @@ def password_reset(request):
             return render(request, "registration/sign_up.html")
         else:
             messages.error(request, "Email invalid")
-            return render(request, "registration/login.html")
+            return render(request, "registration/password_reset_form.html")
 
     return redirect(login)
