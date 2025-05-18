@@ -1,9 +1,11 @@
 from django.contrib.auth import login, authenticate, get_user_model
 from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordResetView
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from .code_generator import CodeGenerator
 import random
 from .forms import CustomUserCreationForm
@@ -17,18 +19,41 @@ User = get_user_model()
 
 
 def mail_verification(request):
-    generator = CodeGenerator()
-    generated_code = generator.create_code()
-    print(generated_code)
+
+    if 'verification_code' not in request.session or 'pending_user' not in request.session:
+        messages.error(request, "Registration session expired or invalid.")
+        return redirect('sign_up')
+
     if request.method == "GET":
         return render(request, "registration/mail_check.html")
+
     if request.method == "POST":
         code = request.POST.get("code")
-        if code == "111111":
-            print("code is right")
-            return redirect('top_page')
-        else: messages.error(request, "Invalid code")
-    return redirect('mail_verification')
+        stored_code = request.session['verification_code']
+
+        if code == stored_code:
+            try:
+                pending_user = request.session['pending_user']
+                user = User.objects.create_user(
+                name=pending_user['name'],
+                email=pending_user['email'],
+                password=pending_user['password']
+                )
+                login(request, user)
+                del request.session['pending_user']
+                del request.session['verification_code']
+
+                messages.success(request, "Registration successful")
+                return redirect('top_page')
+
+            except Exception as e:
+                print("Error creating user", e)
+                messages.error(request, "An error occurred. Please try again.")
+                return redirect('mail_verification')
+        else:
+            messages.error(request, "Invalid code")
+            return redirect('mail_verification')
+    return redirect('sign_up')
 
 def mail_check(request):
     if request.method == "POST":
@@ -38,12 +63,30 @@ def mail_check(request):
 
         if name and email and password:
             try:
-                user = User.objects.create_user(name=name, email=email,password = password)
-                print(user.__dict__)
+                if User.objects.filter(email=email).exists():
+                    messages.error(request, "Email already registered")
+                    return redirect('sign_up')
+                request.session['pending_user'] = {
+                    'name': name,
+                    'email': email,
+                    'password': password
+                }
+                generator = CodeGenerator()
+                verification_code = generator.create_code()
+                request.session['verification_code'] = verification_code
+                send_mail(
+                    "AUTH CODE",
+                    "Here is the code: " + verification_code,
+                    "from@example.com",
+                    ["to@example.com"],
+                    fail_silently=False,)
+
+                print(request.session['pending_user'])
+                print(request.session['verification_code'])
                 return redirect(reverse("mail_verification"))
             except Exception as e:
                 print("Error creating user", e)
-                messages.error(request, "Account already exists")
+                messages.error(request, "An error occurred. Please try again.")
         else:
             messages.error(request, "All fields required")
     return redirect('sign_up')
@@ -68,28 +111,27 @@ def users_login(request):
 def root_redirect(request):
     return redirect('login')
 
+
 def sign_up(request):
     return render(request, "registration/sign_up.html")
 
-def password_reset_form(request):
-    return render(request,"registration/password_reset_form.html")
 
-def password_reset(request):
-    if request.method == "POST":
-        email = request.POST.get("email")
-        try:
-            user = User.objects.get(email=email)
-            print(user)
-            if user is not None:
-                messages.success(request, "Password reset link has been sent to your email")
-                return render(request, "registration/password_reset_form.html")
-
-        except Exception as e:
-            print(e)
-            messages.error(request, "User does not exist")
-
-        else:
-            messages.error(request, "Email invalid")
-            return render(request, "registration/password_reset_form.html")
-
-    return (redirect('login'))
+# def password_reset(request):
+#     if request.method == "POST":
+#         email = request.POST.get("email")
+#         try:
+#             user = User.objects.get(email=email)
+#             print(user)
+#             if user is not None:
+#                 messages.success(request, "Password reset link has been sent to your email")
+#                 return render(request, "registration/password_reset_form.html")
+#
+#         except Exception as e:
+#             print(e)
+#             messages.error(request, "User does not exist")
+#
+#         else:
+#             messages.error(request, "Email invalid")
+#             return render(request, "registration/password_reset_form.html")
+#
+#     return (redirect('login'))
