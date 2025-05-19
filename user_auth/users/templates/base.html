@@ -17,6 +17,19 @@
           <div class="card-body p-5 text-center">
 
             <div class="mb-md-5 mt-md-4 pb-5">
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert
+        {% if message.tags == 'success' %}
+            alert-success
+        {% elif message.tags == 'error' %}
+            alert-danger
+        {% endif %}
+     "style="position: relative; top: -40px;">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
 
     {% block content %}
     {% endblock content%}

@@ -1,18 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-  {% if messages %}
-  {% for message in messages %}
-    <div class="alert
-        {% if message.tags == 'success' %}
-            alert-success
-        {% elif message.tags == 'error' %}
-            alert-danger
-        {% endif %}
-     "style="position: relative; top: -40px;">
-      {{ message }}
-    </div>
-  {% endfor %}
-{% endif %}
     <h2 class="fw-bold mb-2 text-uppercase">ログイン</h2>
     <p class="text-white-50 mb-5">メールアドレスとパスワードを入力してください</p>
 
