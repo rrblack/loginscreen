@@ -1,5 +1,4 @@
 from django.contrib.auth import login, authenticate, get_user_model
-from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordResetView
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -30,19 +29,20 @@ def mail_verification(request):
     if request.method == "POST":
         code = request.POST.get("code")
         stored_code = request.session['verification_code']
+        print("Code that got carried over is", stored_code)
 
         if code == stored_code:
             try:
                 pending_user = request.session['pending_user']
+                print("The user that got carried over is", pending_user)
                 user = User.objects.create_user(
                 name=pending_user['name'],
                 email=pending_user['email'],
                 password=pending_user['password']
                 )
-                login(request, user)
                 del request.session['pending_user']
                 del request.session['verification_code']
-
+                login(request, user)
                 messages.success(request, "Registration successful")
                 return redirect('top_page')
 
@@ -77,16 +77,18 @@ def mail_check(request):
                 request.session['verification_code'] = verification_code
                 send_mail(
                     "AUTH CODE",
-                    "Here is the code: " + verification_code,
-                    "from@example.com",
-                    ["to@example.com"],
+                    "メールアドレス認証コードはこちらです: " + verification_code,
+                    "mail@kanri.com",
+                    [email],
                     fail_silently=False,)
 
-                print(request.session['pending_user'])
-                print(request.session['verification_code'])
+                print("Before redirect:", request.session.get('verification_code'))
+                print("Before redirect:", request.session.get('pending_user'))
+                print("Session data before redirect:", request.session.items())
+                request.session.save()
                 return redirect(reverse("mail_verification"))
             except Exception as e:
-                print("Error creating user", e)
+                print("Error making user", e)
                 messages.error(request, "An error occurred. Please try again.")
         else:
             messages.error(request, "All fields required")

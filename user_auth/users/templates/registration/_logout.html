@@ -1,4 +1,4 @@
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
-    <input type="submit" value="Logout" />
+       <a href="{% url 'login' %}"  class="btn btn-outline-light btn-lg px-5" type="submit">ログアウト</a>
 </form>
