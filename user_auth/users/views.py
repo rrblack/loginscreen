@@ -55,6 +55,7 @@ def mail_verification(request):
             return redirect('mail_verification')
     return redirect('sign_up')
 
+
 def mail_check(request):
     if request.method == "POST":
         name = request.POST.get("name")
@@ -114,24 +115,3 @@ def root_redirect(request):
 
 def sign_up(request):
     return render(request, "registration/sign_up.html")
-
-
-# def password_reset(request):
-#     if request.method == "POST":
-#         email = request.POST.get("email")
-#         try:
-#             user = User.objects.get(email=email)
-#             print(user)
-#             if user is not None:
-#                 messages.success(request, "Password reset link has been sent to your email")
-#                 return render(request, "registration/password_reset_form.html")
-#
-#         except Exception as e:
-#             print(e)
-#             messages.error(request, "User does not exist")
-#
-#         else:
-#             messages.error(request, "Email invalid")
-#             return render(request, "registration/password_reset_form.html")
-#
-#     return (redirect('login'))
