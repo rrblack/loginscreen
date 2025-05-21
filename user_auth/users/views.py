@@ -1,15 +1,18 @@
-from django.contrib.auth import login, authenticate, get_user_model
-from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth import login, authenticate, get_user_model, logout
+from django.contrib.auth.views import PasswordResetView, LogoutView
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.views.decorators.cache import cache_control
+
 from .code_generator import CodeGenerator
 import random
 from .forms import CustomUserCreationForm
 
 @login_required
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def login_success(request):
     messages.success(request, "You are now logged in")
     return render(request,"users/top_page.html")
@@ -93,8 +96,11 @@ def mail_check(request):
         else:
             messages.error(request, "All fields required")
     return redirect('sign_up')
-
-
+def custom_logout(request):
+    logout(request)
+    request.session.delete()
+    messages.success(request, "You are now logged out.")
+    return redirect('login')
 def users_login(request):
     if request.method == "POST":
         print(request)
@@ -113,7 +119,6 @@ def users_login(request):
 
 def root_redirect(request):
     return redirect('login')
-
 
 def sign_up(request):
     return render(request, "registration/sign_up.html")

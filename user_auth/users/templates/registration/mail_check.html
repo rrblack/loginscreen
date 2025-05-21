@@ -32,8 +32,8 @@ input[type="number"] {
 
 <script>
 document.getElementById("typeEmailCheckX").addEventListener("input", function() {
-    let value = this.value.replace(/\D/g, "");  // ✅ Removes non-numeric characters
-    this.value = value.slice(0, 6);  // ✅ Limits input to exactly 6 digits
+    let value = this.value.replace(/\D/g, "");  // Removes non-numeric characters
+    this.value = value.slice(0, 6);  //Limits input to exactly 6 digits
 });
 </script>
 {% load static %}
