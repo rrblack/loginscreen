@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="50a2c99d-1d30-4b61-815f-f0fafc9dd968" name="Changes" comment="v.o1">
+      <change beforePath="$PROJECT_DIR$/user_auth/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/users/tests.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rrblack&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rrblack/loginscreen.git&quot;,
+    &quot;accountId&quot;: &quot;03e51ee3-4f97-4127-9839-ddc92c76da72&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/Lib/site-packages/django/contrib/auth/__init__.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Lib/site-packages/django/contrib/auth/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Lib/site-packages/django/views/generic/edit.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2x4ChR4sR06GhSU757MhK1g5k9m" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.Freewill_Project.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: users.tests.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rrbla\PycharmProjects\Freewill_Project\user_auth\users\static\js" />
+      <recent name="C:\Users\rrbla\PycharmProjects\Freewill_Project\user_auth\users\static\css" />
+      <recent name="C:\Users\rrbla\PycharmProjects\Freewill_Project\user_auth\users" />
+      <recent name="C:\Users\rrbla\PycharmProjects\Freewill_Project\user_auth" />
+      <recent name="C:\Users\rrbla\PycharmProjects\Freewill_Project\user_auth\user_auth" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Freewill_Project" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Freewill_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="user_auth.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50a2c99d-1d30-4b61-815f-f0fafc9dd968" name="Changes" comment="" />
+      <created>1747188078054</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747188078054</updated>
+      <workItem from="1747188079130" duration="1131000" />
+      <workItem from="1747189232431" duration="7706000" />
+      <workItem from="1747201781498" duration="32000" />
+      <workItem from="1747201853997" duration="6730000" />
+      <workItem from="1747267149987" duration="26105000" />
+      <workItem from="1747303163951" duration="328000" />
+      <workItem from="1747303511672" duration="197000" />
+      <workItem from="1747354150017" duration="266000" />
+      <workItem from="1747354652970" duration="687000" />
+      <workItem from="1747355361936" duration="596000" />
+      <workItem from="1747355974708" duration="498000" />
+      <workItem from="1747356637845" duration="19797000" />
+      <workItem from="1747612363788" duration="52000" />
+      <workItem from="1747612437985" duration="26210000" />
+      <workItem from="1747698935806" duration="5544000" />
+      <workItem from="1747788788537" duration="23013000" />
+      <workItem from="1747874015559" duration="9307000" />
+      <workItem from="1747886416361" duration="17480000" />
+      <workItem from="1747959010122" duration="34000" />
+    </task>
+    <task id="LOCAL-00001" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747303368143</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747303368143</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747355696215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747355696215</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747368943171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747368943171</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747375016813</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747375016813</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747377904358</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747377904358</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747377910229</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747377910229</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747385451578</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747385451578</updated>
+    </task>
+    <task id="LOCAL-00008" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747615019412</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747615019412</updated>
+    </task>
+    <task id="LOCAL-00009" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747642124496</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747642124496</updated>
+    </task>
+    <task id="LOCAL-00010" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747644773956</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747644773956</updated>
+    </task>
+    <task id="LOCAL-00011" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747645013082</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747645013082</updated>
+    </task>
+    <task id="LOCAL-00012" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747793304858</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747793304859</updated>
+    </task>
+    <task id="LOCAL-00013" summary="v.o1">
+      <option name="closed" value="true" />
+      <created>1747817564754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747817564755</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v.o1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.o1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Freewill_Project$Test__users_tests.coverage" NAME="Test: users.tests Coverage Results" MODIFIED="1747899788026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Freewill_Project$tests.coverage" NAME="tests Coverage Results" MODIFIED="1747876649110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_auth/users" />
+    <SUITE FILE_PATH="coverage/Freewill_Project$test.coverage" NAME="test Coverage Results" MODIFIED="1747269021750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_auth" />
+  </component>
+</project>
